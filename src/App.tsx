@@ -1,20 +1,12 @@
-import { useState } from "react";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Index from "./pages/Index";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="app-shell">
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>Edit <code>src/App.tsx</code> and save to test HMR</p>
-      </div>
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Index />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
