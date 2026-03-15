@@ -1,11 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function() {
+        var theme = localStorage.getItem('codenex-theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Codenex Studio | AI Website Builder Frontend</title>
+    <meta name="description" content="Frontend for Codenex Studio, an AI-powered website and app builder with marketing pages, project workspaces, builder flows, previews, and account tooling." />
+    <meta name="author" content="Codenex Studio" />
+
+    <meta property="og:title" content="Codenex Studio | AI Website Builder Frontend" />
+    <meta property="og:description" content="Frontend for an AI-powered website builder with project dashboards, collaborative builder workflows, previews, and SaaS account surfaces." />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Codenex Studio | AI Website Builder Frontend" />
+    <meta name="twitter:description" content="Frontend for an AI-powered website builder with project dashboards, builder flows, previews, and account surfaces." />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

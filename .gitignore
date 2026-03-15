@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling
+.claude/
+
+# Local build cache
+.vite/
