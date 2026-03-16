@@ -25,6 +25,3 @@ dist-ssr
 
 # Local tooling
 .claude/
-
-# Local build cache
-.vite/
