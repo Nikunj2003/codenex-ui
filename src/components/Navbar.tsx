@@ -30,7 +30,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container h-20 pt-2">
+      <div className={cn("container transition-all duration-300", scrolled ? "py-2" : "h-20 pt-2")}>
         <div className="flex h-full items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
           <Link to="/" className="flex items-center gap-2.5 group justify-self-start">
             <img src="/logo.png" alt="Codenex" className="h-14 w-14 transition-transform group-hover:scale-105" />
