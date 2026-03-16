@@ -149,6 +149,10 @@ Natural next steps for this frontend include:
 - collaborative activity and notification backends,
 - usage, billing, and account service integration.
 
+## License
+
+This project is licensed under the MIT License. See [`LICENSE`](./LICENSE) for details.
+
 ## Publishing notes
 
 Before pushing publicly, verify:
