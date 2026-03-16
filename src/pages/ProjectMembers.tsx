@@ -18,7 +18,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const members = [
-  { id: "1", name: "John Doe", email: "john@example.com", role: "OWNER", status: "accepted", initials: "JD" },
+  { id: "1", name: "Nikunj Khitha", email: "njkhitha2003@gmail.com", role: "OWNER", status: "accepted", initials: "NK" },
   { id: "2", name: "Jane Smith", email: "jane@example.com", role: "EDITOR", status: "accepted", initials: "JS" },
   { id: "3", name: "Bob Wilson", email: "bob@example.com", role: "VIEWER", status: "pending", initials: "BW" },
 ];

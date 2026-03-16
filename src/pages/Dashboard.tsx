@@ -26,7 +26,7 @@ export default function Dashboard() {
       <div className="w-full max-w-4xl space-y-10">
         {/* Header */}
         <motion.div {...f(0)} className="text-center">
-          <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-2">{getGreeting()}, John</h1>
+          <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-2">{getGreeting()}, Nikunj</h1>
           <p className="text-muted-foreground">Pick up where you left off or start something new.</p>
         </motion.div>
 

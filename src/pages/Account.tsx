@@ -23,25 +23,25 @@ export default function Account() {
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <div className="relative group">
               <Avatar className="h-16 w-16">
-                <AvatarFallback className="bg-secondary text-foreground text-xl font-display font-semibold">JD</AvatarFallback>
+                <AvatarFallback className="bg-secondary text-foreground text-xl font-display font-semibold">NK</AvatarFallback>
               </Avatar>
               <div className="absolute inset-0 rounded-full bg-foreground/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                 <Camera className="h-4 w-4 text-background" />
               </div>
             </div>
             <div className="text-center sm:text-left">
-              <p className="font-display font-semibold">John Doe</p>
-              <p className="text-xs text-muted-foreground">john@example.com</p>
+              <p className="font-display font-semibold">Nikunj Khitha</p>
+              <p className="text-xs text-muted-foreground">Nikunj@example.com</p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label className="text-sm">Full name</Label>
-              <Input defaultValue="John Doe" className="h-11" />
+              <Input defaultValue="Nikunj Khitha" className="h-11" />
             </div>
             <div className="space-y-1.5">
               <Label className="text-sm">Email</Label>
-              <Input defaultValue="john@example.com" disabled className="h-11" />
+              <Input defaultValue="Nikunj@example.com" disabled className="h-11" />
             </div>
           </div>
           <div className="flex justify-end">

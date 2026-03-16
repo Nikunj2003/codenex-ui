@@ -79,10 +79,10 @@ export function AppLayout() {
         <div className="p-2 border-t border-border">
           <div className="flex items-center gap-2.5 px-3 py-2">
             <Avatar className="h-7 w-7">
-              <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">JD</AvatarFallback>
+              <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">NK</AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
-              <p className="text-[13px] font-medium truncate">John Doe</p>
+              <p className="text-[13px] font-medium truncate">Nikunj Khitha</p>
               <span className="text-[10px] font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">Pro plan</span>
             </div>
           </div>
@@ -122,14 +122,14 @@ export function AppLayout() {
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full h-8 w-8">
                   <Avatar className="h-7 w-7">
-                    <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">JD</AvatarFallback>
+                    <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">NK</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <div className="px-3 py-2">
-                  <p className="text-sm font-medium">John Doe</p>
-                  <p className="text-xs text-muted-foreground">john@example.com</p>
+                  <p className="text-sm font-medium">Nikunj Khitha</p>
+                  <p className="text-xs text-muted-foreground">Nikunj@example.com</p>
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => navigate("/app/account")}>
