@@ -26,15 +26,15 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center px-4 relative">
+    <div className="relative flex min-h-[calc(100dvh-4rem)] items-start justify-center px-4 pb-10 pt-4 sm:pt-5 md:pt-5 lg:pt-7 xl:pt-8">
       {/* blur glow */}
       <div className="absolute w-[420px] h-[420px] rounded-full bg-primary/[0.04] blur-3xl pointer-events-none" />
 
       <motion.div
         {...f(0)}
-        className="w-full max-w-[400px] relative z-10"
+        className="relative z-10 w-full max-w-[400px] sm:max-w-[420px] lg:max-w-[440px]"
       >
-        <div className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-8 surface-elevated">
+        <div className="rounded-2xl border border-border bg-card/80 p-6 backdrop-blur-sm surface-elevated sm:p-8 lg:p-9">
           <div className="mb-8">
             <Link to="/" className="flex items-center gap-2.5 mb-8">
               <img src="/logo.png" alt="Codenex" className="h-10 w-10" />

@@ -6,6 +6,7 @@ import HexGridBackground from "@/components/HexGridBackground";
 
 export function PublicLayout() {
   const location = useLocation();
+  const isAuthRoute = location.pathname === "/login" || location.pathname === "/signup";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,7 +19,7 @@ export function PublicLayout() {
       <main className="flex-1 pt-16">
         <Outlet />
       </main>
-      <Footer />
+      {!isAuthRoute && <Footer />}
     </div>
   );
 }
