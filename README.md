@@ -16,6 +16,42 @@ This codebase currently focuses on the frontend experience and product surface a
 
 Based on the route structure in `src/App.tsx`, the app currently includes:
 
+## Screenshots
+
+### Landing page
+
+**Light theme**
+
+![Codenex landing page light theme](./public/Images/landing-page-light.png)
+
+**Dark theme**
+
+![Codenex landing page dark theme](./public/Images/landing-page-dark.png)
+
+### Authentication
+
+**Login page**
+
+![Codenex login page dark theme](./public/Images/login-page-dark.png)
+
+### Dashboard
+
+**Overview — dark theme**
+
+![Codenex dashboard overview dark theme](./public/Images/dashboard-overview-dark.png)
+
+**Overview — light theme**
+
+![Codenex dashboard overview light theme](./public/Images/dashboard-overview-light.png)
+
+**Usage page**
+
+![Codenex dashboard usage page dark theme](./public/Images/dashboard-usage-dark.png)
+
+### Builder workspace
+
+![Codenex project builder workspace dark theme](./public/Images/project-builder-dark.png)
+
 ### Public site
 - Landing page
 - Features page
