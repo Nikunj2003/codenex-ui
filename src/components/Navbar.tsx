@@ -31,7 +31,7 @@ export function Navbar() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
           ? "border-b border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_hsl(var(--foreground)/0.8)] backdrop-blur-2xl"
-          : "bg-background/72 backdrop-blur-xl"
+          : "bg-background/72 backdrop-blur-xl md:bg-transparent md:backdrop-blur-none"
       )}
     >
       <div className="container px-4 sm:px-6">
