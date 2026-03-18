@@ -114,19 +114,21 @@ export default function Landing() {
             </div>
 
             <motion.div {...f(0.3)} className="flex justify-center md:justify-end">
-              <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} className="w-full max-w-[34rem]" style={{ perspective: 900 }}>
-                <div className="rounded-[1.75rem] border border-border/70 bg-card/70 p-2 shadow-[0_30px_80px_-50px_hsl(var(--foreground)/0.75)] backdrop-blur">
-                  <img
-                    src="/card.png"
-                    alt="Codenex Project Card"
-                    className="w-full rounded-[1.15rem] shadow-2xl"
-                    style={{
-                      transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                      transition: isHovering ? "transform 0.1s ease-out" : "transform 0.5s ease-out",
-                      transformStyle: "preserve-3d",
-                    }}
-                  />
-                </div>
+              <div
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ perspective: 800 }}
+              >
+                <img
+                  src="/card.png"
+                  alt="Codenex Project Card"
+                  className="w-full max-w-2xl rounded-2xl shadow-2xl"
+                  style={{
+                    transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+                    transition: isHovering ? "transform 0.1s ease-out" : "transform 0.5s ease-out",
+                    transformStyle: "preserve-3d",
+                  }}
+                />
               </div>
             </motion.div>
           </div>
