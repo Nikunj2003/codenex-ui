@@ -6,6 +6,12 @@ import { ArrowRight, Cpu, Eye, GitBranch, Users, Layers, Shield, Rocket, Globe }
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
+const f = (delay: number) => ({
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay, duration: 0.6, ease },
+});
+
 const sections = [
   { icon: Cpu, title: "AI builder workflow", body: "Describe your app in natural language and watch Codenex generate a complete, production-ready application. Iterate through conversation, not configuration.", tag: "Core" },
   { icon: Users, title: "Project collaboration", body: "Invite team members as editors or viewers. Manage roles, handle invites, and build together with clear permission boundaries.", tag: "Teams" },
@@ -21,26 +27,21 @@ export default function Features() {
   return (
     <div>
       {/* ─── HERO ─── */}
-      <section className="relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/[0.04] blur-3xl" />
         </div>
 
-        <div className="container relative">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="max-w-2xl"
-          >
-            <p className="label-caps text-primary mb-5">Features</p>
-            <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6">
-              Built for people who ship.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Every feature exists to help you move from idea to production faster, with full visibility and control.
-            </p>
-          </motion.div>
+        <div className="container relative text-center">
+          <motion.p {...f(0)} className="label-caps text-primary mb-5">
+            Features
+          </motion.p>
+          <motion.h1 {...f(0.08)} className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 mx-auto max-w-3xl">
+            Built for people who ship.
+          </motion.h1>
+          <motion.p {...f(0.16)} className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Every feature exists to help you move from idea to production faster, with full visibility and control.
+          </motion.p>
         </div>
       </section>
 
@@ -80,14 +81,14 @@ export default function Features() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-24 md:py-36 border-t border-border">
-        <div className="container">
+      <section className="py-28 md:py-40 border-t border-border">
+        <div className="container text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
-            className="max-w-xl"
+            className="max-w-xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6">
               See it in action.
@@ -95,11 +96,13 @@ export default function Features() {
             <p className="text-muted-foreground text-lg mb-9 leading-relaxed">
               Start building for free and experience every feature first-hand.
             </p>
-            <Link to="/signup">
-              <Button variant="hero" size="lg" className="gap-2">
-                Start building free <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link to="/signup">
+                <Button variant="hero" size="lg" className="gap-2">
+                  Start building free <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

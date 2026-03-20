@@ -349,28 +349,30 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="border-t border-border py-24 md:py-40">
-        <div className="container px-4 sm:px-6">
+      <section className="border-t border-border py-28 md:py-40">
+        <div className="container px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
-            className="max-w-xl"
+            className="max-w-xl mx-auto"
           >
             <h2 className="mb-6 text-3xl font-display font-bold tracking-tight md:text-5xl">
               Ready to build
-              <br />
+              <br className="hidden sm:block" />
               something real?
             </h2>
             <p className="mb-9 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               Start with a free account. No credit card. No time limit. Just your next idea.
             </p>
-            <Link to="/signup" className="block sm:inline-block">
-              <Button variant="hero" size="lg" className="w-full gap-2 sm:w-auto">
-                Get started <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link to="/signup" className="block sm:inline-block">
+                <Button variant="hero" size="lg" className="w-full gap-2 sm:w-auto">
+                  Start building free <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
