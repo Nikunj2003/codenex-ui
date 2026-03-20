@@ -9,23 +9,23 @@
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    --background: 35 20% 97%;
-    --foreground: 35 25% 15%;
+    --background: 35 10% 98%;
+    --foreground: 174 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 35 25% 15%;
+    --card-foreground: 174 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 35 25% 15%;
+    --popover-foreground: 174 25% 12%;
 
     --primary: 173.7 44.2% 42.2%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 15% 94%;
-    --secondary-foreground: 35 30% 20%;
+    --secondary: 174 15% 94%;
+    --secondary-foreground: 174 30% 20%;
 
-    --muted: 35 15% 94%;
-    --muted-foreground: 35 15% 45%;
+    --muted: 174 15% 94%;
+    --muted-foreground: 174 15% 45%;
 
     --accent: 174 25% 90%;
     --accent-foreground: 174 50% 25%;
@@ -33,19 +33,19 @@
     --destructive: 0 65% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 90%;
-    --input: 35 20% 90%;
+    --border: 174 15% 90%;
+    --input: 174 15% 90%;
     --ring: 173.7 44.2% 42.2%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 35 20% 97%;
-    --sidebar-foreground: 35 25% 15%;
+    --sidebar-background: 35 10% 98%;
+    --sidebar-foreground: 174 25% 12%;
     --sidebar-primary: 173.7 44.2% 42.2%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 174 25% 90%;
+    --sidebar-accent: 174 15% 90%;
     --sidebar-accent-foreground: 174 50% 25%;
-    --sidebar-border: 35 20% 90%;
+    --sidebar-border: 174 15% 90%;
     --sidebar-ring: 173.7 44.2% 42.2%;
 
     --success: 162 55% 42%;
