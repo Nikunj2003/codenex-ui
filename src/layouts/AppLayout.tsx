@@ -12,13 +12,20 @@ import {
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
-const workspaceItems = [
+type SidebarItem = {
+  icon: any;
+  label: string;
+  path: string;
+  badge?: number;
+};
+
+const workspaceItems: SidebarItem[] = [
   { icon: Home, label: "Home", path: "/app" },
   { icon: FolderKanban, label: "Projects", path: "/app/projects" },
   { icon: Bell, label: "Notifications", path: "/app/notifications", badge: 2 },
 ];
 
-const accountItems = [
+const accountItems: SidebarItem[] = [
   { icon: BarChart3, label: "Usage", path: "/app/usage" },
   { icon: CreditCard, label: "Billing", path: "/app/billing" },
   { icon: User, label: "Account", path: "/app/account" },
@@ -35,7 +42,7 @@ export function AppLayout() {
     mainRef.current?.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const renderSidebarItem = (item: (typeof sidebarItems)[number]) => {
+  const renderSidebarItem = (item: SidebarItem) => {
     const active = location.pathname === item.path || (item.path !== "/app" && location.pathname.startsWith(item.path));
     return (
       <Link
@@ -60,7 +67,7 @@ export function AppLayout() {
   return (
     <div className="h-screen flex w-full overflow-hidden">
       {/* Sidebar */}
-      <aside className="hidden md:flex flex-col w-56 border-r border-border bg-card">
+      <aside className="hidden md:flex flex-col w-56 border-r border-border bg-background">
         <div className="h-14 flex items-center px-3 border-b border-border">
           <Link to="/app" className="flex items-center gap-2.5 px-1">
             <img src="/logo.png" alt="Codenex" className="h-12 w-12 flex-shrink-0" />
@@ -148,7 +155,7 @@ export function AppLayout() {
         </header>
 
         {/* Mobile nav */}
-        <nav className="md:hidden flex border-b border-border overflow-x-auto bg-card">
+        <nav className="md:hidden flex border-b border-border overflow-x-auto bg-background">
           {sidebarItems.slice(0, 5).map((item) => {
             const active = location.pathname === item.path;
             return (
