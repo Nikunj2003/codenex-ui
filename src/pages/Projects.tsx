@@ -70,14 +70,14 @@ export default function Projects() {
         <div className="grid sm:grid-cols-2 gap-4">
           {filtered.map((project, i) => (
             <motion.div key={project.id} {...f(0.08 + i * 0.04)}>
-              <div className="p-5 rounded-xl border border-border bg-card hover:border-foreground/10 hover:shadow-sm transition-all group">
+              <div className="relative p-5 rounded-xl border border-border bg-card hover:border-foreground/10 hover:border-primary/20 hover:shadow-sm transition-all group cursor-pointer">
                 <div className="flex items-start justify-between mb-4">
                   <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-primary/8 transition-colors">
                     <FolderKanban className="h-4 w-4 text-foreground/60 group-hover:text-primary transition-colors" />
                   </div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Button variant="ghost" size="icon" className="relative z-10 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity">
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
@@ -90,7 +90,7 @@ export default function Projects() {
                   </DropdownMenu>
                 </div>
 
-                <Link to={`/app/projects/${project.id}`}>
+                <Link to={`/app/projects/${project.id}`} className="after:absolute after:inset-0">
                   <h3 className="font-display text-sm font-semibold mb-1 group-hover:text-primary transition-colors">{project.name}</h3>
                 </Link>
                 <p className="text-xs text-muted-foreground mb-5 line-clamp-1">{project.desc}</p>

@@ -76,10 +76,10 @@ export function AppLayout() {
         </div>
 
         <nav className="flex-1 p-2 space-y-0.5 overflow-y-auto">
-          <p className="label-caps text-muted-foreground/40 px-3 pt-4 pb-1 text-[10px]">Workspace</p>
+          <p className="label-caps text-muted-foreground/70 px-3 pt-4 pb-1 text-[10px]">Workspace</p>
           {workspaceItems.map(renderSidebarItem)}
 
-          <p className="label-caps text-muted-foreground/40 px-3 pt-4 pb-1 text-[10px]">Account</p>
+          <p className="label-caps text-muted-foreground/70 px-3 pt-4 pb-1 text-[10px]">Account</p>
           {accountItems.map(renderSidebarItem)}
         </nav>
 
