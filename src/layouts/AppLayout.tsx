@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Home, FolderKanban, BarChart3, CreditCard, User, LogOut,
-  Plus, Bell, Search,
+  Plus, Bell, Search, Info, Book, Key, ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -84,15 +84,42 @@ export function AppLayout() {
         </nav>
 
         <div className="p-2 border-t border-border">
-          <div className="flex items-center gap-2.5 px-3 py-2">
-            <Avatar className="h-7 w-7">
-              <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">NK</AvatarFallback>
-            </Avatar>
-            <div className="flex-1 min-w-0">
-              <p className="text-[13px] font-medium truncate">Nikunj Khitha</p>
-              <span className="text-[10px] font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">Pro plan</span>
-            </div>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="w-full justify-start h-auto px-2 py-2 hover:bg-secondary/50 !ring-0 !outline-none focus:ring-0 focus-visible:ring-0 data-[state=open]:bg-secondary/50">
+                <div className="flex items-center gap-2.5 w-full">
+                  <Avatar className="h-8 w-8 shrink-0">
+                    <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">NK</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 min-w-0 text-left">
+                    <p className="text-[13px] font-medium truncate text-foreground leading-tight mb-1">Nikunj Khitha</p>
+                    <span className="inline-flex text-[10px] font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full leading-none">Pro plan</span>
+                  </div>
+                  <ChevronRight className="h-4 w-4 ml-auto text-muted-foreground/60 shrink-0" />
+                </div>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" side="right" className="w-56 mb-1 ml-2">
+              <div className="px-3 py-2">
+                <p className="text-sm font-medium">Nikunj Khitha</p>
+                <p className="text-xs text-muted-foreground">Nikunj@example.com</p>
+              </div>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => navigate("/app/about")}>
+                <Info className="h-4 w-4 mr-2" /> About
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => {}}>
+                <Book className="h-4 w-4 mr-2" /> Documentation
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => {}}>
+                <Key className="h-4 w-4 mr-2" /> API Key
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => navigate("/login")} className="text-destructive">
+                <LogOut className="h-4 w-4 mr-2" /> Log out
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </aside>
 
@@ -124,33 +151,6 @@ export function AppLayout() {
             </Button>
 
             <ThemeToggle />
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-8 w-8">
-                  <Avatar className="h-7 w-7">
-                    <AvatarFallback className="bg-secondary text-foreground text-xs font-display font-semibold">NK</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <div className="px-3 py-2">
-                  <p className="text-sm font-medium">Nikunj Khitha</p>
-                  <p className="text-xs text-muted-foreground">Nikunj@example.com</p>
-                </div>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => navigate("/app/account")}>
-                  <User className="h-4 w-4 mr-2" /> Account
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate("/app/billing")}>
-                  <CreditCard className="h-4 w-4 mr-2" /> Billing
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => navigate("/login")} className="text-destructive">
-                  <LogOut className="h-4 w-4 mr-2" /> Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
         </header>
 

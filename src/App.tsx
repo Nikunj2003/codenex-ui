@@ -13,6 +13,7 @@ import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
+import AppAbout from "./pages/AppAbout";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import ProjectOverview from "./pages/ProjectOverview";
@@ -51,6 +52,7 @@ const App = () => (
             {/* Authenticated routes */}
             <Route path="/app" element={<AppLayout />}>
               <Route index element={<Dashboard />} />
+              <Route path="about" element={<AppAbout />} />
               <Route path="projects" element={<Projects />} />
               <Route path="projects/:projectId" element={<ProjectOverview />} />
               <Route path="projects/:projectId/files" element={<ProjectFiles />} />
