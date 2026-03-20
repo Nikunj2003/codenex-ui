@@ -25,7 +25,7 @@ export function Footer() {
           <div>
             <p className="label-caps text-muted-foreground mb-4">Company</p>
             <ul className="space-y-3 text-sm">
-              <li><span className="text-muted-foreground/50 cursor-not-allowed" title="Coming soon">About</span></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
               <li><span className="text-muted-foreground/50 cursor-not-allowed" title="Coming soon">Blog</span></li>
               <li><span className="text-muted-foreground/50 cursor-not-allowed" title="Coming soon">Careers</span></li>
             </ul>

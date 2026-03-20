@@ -134,7 +134,7 @@ export default function Landing() {
           </div>
 
           <motion.div {...f(0.35)} className="mt-16 sm:mt-20 md:mt-28">
-            <div className="overflow-hidden rounded-[1.5rem] border border-border/80 bg-card/95 surface-elevated">
+            <div className="overflow-hidden rounded-[1.5rem] border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl">
               <div className="flex flex-wrap items-center gap-3 border-b border-border px-4 py-3 sm:h-11 sm:flex-nowrap sm:py-0">
                 <div className="flex gap-1.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-foreground/10" />
