@@ -43,6 +43,7 @@ export default function HexGridBackground() {
   const dprRef = useRef(window.devicePixelRatio || 1);
   const isMobile = useIsMobile();
   const { theme } = useTheme();
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Keep theme ref in sync without triggering canvas re-init
   useEffect(() => {
@@ -183,7 +184,7 @@ export default function HexGridBackground() {
     };
   }, [isMobile, draw]);
 
-  if (isMobile) return null;
+  if (isMobile || prefersReducedMotion) return null;
 
   return (
     <canvas

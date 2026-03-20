@@ -1,16 +1,13 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Eye, GitBranch, Users, Layers, Shield, Rocket, Globe } from "lucide-react";
 
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
-const f = (delay: number) => ({
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay, duration: 0.6, ease },
-});
+// Animation variables are now generated inside the component so they can access hooks
 
 const sections = [
   { icon: Cpu, title: "AI builder workflow", body: "Describe your app in natural language and watch Codenex generate a complete, production-ready application. Iterate through conversation, not configuration.", tag: "Core" },
@@ -24,6 +21,15 @@ const sections = [
 ];
 
 export default function Features() {
+  const prefersReducedMotion = useReducedMotion();
+  const isMobile = useIsMobile();
+
+  const f = (delay: number) => ({
+    initial: { opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) },
+    animate: { opacity: 1, y: 0 },
+    transition: { delay: prefersReducedMotion ? 0 : delay, duration: 0.6, ease },
+  });
+
   return (
     <div>
       {/* ─── HERO ─── */}
@@ -52,10 +58,11 @@ export default function Features() {
             {sections.map((s, i) => (
               <motion.div
                 key={s.title}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 6 : 12) }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.04, duration: 0.5, ease }}
+                transition={{ delay: prefersReducedMotion ? 0 : i * 0.04, duration: 0.5, ease }}
+                style={{ willChange: "transform, opacity" }}
                 className="group flex flex-col sm:flex-row gap-5 p-6 md:p-8 rounded-xl border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl hover:surface-elevated transition-shadow"
               >
                 <div className="h-11 w-11 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
@@ -84,10 +91,11 @@ export default function Features() {
       <section className="py-28 md:py-40 border-t border-border">
         <div className="container text-center">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
+            style={{ willChange: "transform, opacity" }}
             className="max-w-xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6">

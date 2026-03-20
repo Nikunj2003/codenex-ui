@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Home, FolderKanban, BarChart3, CreditCard, User, LogOut,
-  Plus, Bell, Search, Info, Book, Key, ChevronRight
+  Plus, Bell, Search, Info, Book, Key, ChevronRight, type LucideIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -13,7 +13,7 @@ import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 type SidebarItem = {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   path: string;
   badge?: number;

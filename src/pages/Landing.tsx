@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Terminal, Eye, GitBranch, Users, Layers, Shield, Cpu, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useCallback } from "react";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -46,15 +47,19 @@ const workflow = [
   { step: "04", title: "Ship", body: "Preview on any device. Hit publish when ready. It's that simple." },
 ];
 
-const f = (delay: number) => ({
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay, duration: 0.6, ease },
-});
+// Animation variable f is generated inside the component
 
 export default function Landing() {
+  const prefersReducedMotion = useReducedMotion();
+  const isMobile = useIsMobile();
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+
+  const f = (delay: number) => ({
+    initial: { opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) },
+    animate: { opacity: 1, y: 0 },
+    transition: { delay: prefersReducedMotion ? 0 : delay, duration: 0.6, ease },
+  });
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -149,6 +154,8 @@ export default function Landing() {
                 </div>
               </div>
 
+              {/* Prevent massive repaints on scroll by not translating the heavy UI frame if not needed, 
+                  but we'll just keep it stable since it inherits from a top-level motion div. */}
               <div className="flex flex-col lg:min-h-[580px] lg:flex-row">
                 <div className="flex min-h-[360px] w-full flex-col border-b border-border lg:min-h-[580px] lg:w-[34%] lg:border-b-0 lg:border-r">
                   <div className="flex h-11 items-center border-b border-border px-3 sm:px-4">
@@ -280,10 +287,11 @@ export default function Landing() {
       <section className="relative border-y border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl py-24 md:py-36">
         <div className="container px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
+            style={{ willChange: "transform, opacity" }}
             className="mb-16 md:mb-20"
           >
             <p className="label-caps mb-4 text-primary">Capabilities</p>
@@ -296,10 +304,11 @@ export default function Landing() {
             {capabilities.map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.5, ease }}
+                transition={{ delay: prefersReducedMotion ? 0 : i * 0.06, duration: 0.5, ease }}
+                style={{ willChange: "transform, opacity" }}
                 className="flex gap-5"
               >
                 <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
@@ -318,10 +327,11 @@ export default function Landing() {
       <section className="border-t border-border py-24 md:py-36">
         <div className="container px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
+            style={{ willChange: "transform, opacity" }}
             className="mb-16 md:mb-20"
           >
             <p className="label-caps mb-4 text-primary">Workflow</p>
@@ -334,10 +344,11 @@ export default function Landing() {
             {workflow.map((item, i) => (
               <motion.div
                 key={item.step}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 12) }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: prefersReducedMotion ? 0 : i * 0.1, duration: 0.5 }}
+                style={{ willChange: "transform, opacity" }}
                 className="p-6 sm:p-7 md:p-8 rounded-xl border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl hover:surface-elevated transition-shadow"
               >
                 <p className="mb-5 text-3xl font-display font-bold text-foreground/8">{item.step}</p>
@@ -352,10 +363,11 @@ export default function Landing() {
       <section className="border-t border-border py-28 md:py-40">
         <div className="container px-4 sm:px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : (isMobile ? 8 : 16) }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
+            style={{ willChange: "transform, opacity" }}
             className="max-w-xl mx-auto"
           >
             <h2 className="mb-6 text-3xl font-display font-bold tracking-tight md:text-5xl">
