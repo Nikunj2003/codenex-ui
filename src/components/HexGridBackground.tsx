@@ -123,17 +123,21 @@ export default function HexGridBackground() {
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      dprRef.current = dpr;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
+      const newWidth = window.innerWidth * dpr;
+      const newHeight = window.innerHeight * dpr;
+      
+      if (canvas.width !== newWidth || canvas.height !== newHeight || dprRef.current !== dpr) {
+        dprRef.current = dpr;
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+        draw();
+      }
     };
 
     resize();
-
-    const ro = new ResizeObserver(resize);
-    ro.observe(document.documentElement);
+    window.addEventListener("resize", resize);
 
     const onMouseMove = (e: MouseEvent) => {
       mouseRef.current.x = e.clientX;
@@ -172,7 +176,7 @@ export default function HexGridBackground() {
     return () => {
       active = false;
       cancelAnimationFrame(rafRef.current);
-      ro.disconnect();
+      window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("visibilitychange", onVisibilityChange);
