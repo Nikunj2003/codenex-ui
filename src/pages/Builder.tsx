@@ -338,7 +338,7 @@ export default function Builder() {
       <header className="h-11 border-b border-border flex items-center px-3 gap-3 bg-card flex-shrink-0">
         <Link to={`/app/projects/${projectId}`} className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
           <ArrowLeft className="h-3.5 w-3.5" />
-          <img src="/logo.png" alt="Codenex" className="h-5 w-5" />
+          <img src="/brand-icon.png" alt="Codenex" className="h-5 w-5" />
         </Link>
         <div className="h-4 w-px bg-border" />
         <span className="text-[13px] font-display font-medium truncate">SaaS Dashboard</span>

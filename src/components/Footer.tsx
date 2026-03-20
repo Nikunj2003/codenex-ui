@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div className="col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-5">
-              <img src="/logo.png" alt="Codenex" className="h-10 w-10" />
+              <img src="/brand-icon.png" alt="Codenex" className="h-10 w-10" />
               <span className="font-display text-lg font-semibold tracking-tight">codenex</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">

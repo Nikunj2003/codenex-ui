@@ -44,7 +44,7 @@ export function Navbar() {
         >
           <Link to="/" className="group flex min-w-0 items-center gap-2 sm:gap-2.5 md:justify-self-start">
             <img
-              src="/logo.png"
+              src="/brand-icon.png"
               alt="Codenex"
               className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105 sm:h-12 sm:w-12 md:h-14 md:w-14"
             />

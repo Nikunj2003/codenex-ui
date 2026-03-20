@@ -37,7 +37,7 @@ export default function Signup() {
         <div className="rounded-2xl border border-border bg-card/80 p-6 backdrop-blur-sm surface-elevated sm:p-8 lg:p-9">
           <div className="mb-8">
             <Link to="/" className="flex items-center gap-2.5 mb-8">
-              <img src="/logo.png" alt="Codenex" className="h-10 w-10" />
+              <img src="/brand-icon.png" alt="Codenex" className="h-10 w-10" />
               <span className="font-display text-lg font-semibold tracking-tight">codenex</span>
             </Link>
             <h1 className="text-2xl font-display font-bold tracking-tight mb-1">Create your account</h1>

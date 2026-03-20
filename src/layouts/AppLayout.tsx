@@ -70,7 +70,7 @@ export function AppLayout() {
       <aside className="hidden md:flex flex-col w-56 border-r border-border bg-background">
         <div className="h-14 flex items-center px-3 border-b border-border">
           <Link to="/app" className="flex items-center gap-2.5 px-1">
-            <img src="/logo.png" alt="Codenex" className="h-12 w-12 flex-shrink-0" />
+            <img src="/brand-icon.png" alt="Codenex" className="h-12 w-12 flex-shrink-0" />
             <span className="font-display text-2xl font-semibold tracking-tight">codenex</span>
           </Link>
         </div>
@@ -102,7 +102,7 @@ export function AppLayout() {
           <div className="flex items-center gap-3">
             <div className="md:hidden">
               <Link to="/app">
-                <img src="/logo.png" alt="Codenex" className="h-12 w-12" />
+                <img src="/brand-icon.png" alt="Codenex" className="h-12 w-12" />
               </Link>
             </div>
             <button className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-card text-muted-foreground text-[13px] hover:bg-secondary transition-colors min-w-[180px]">
