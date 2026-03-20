@@ -55,7 +55,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04, duration: 0.5, ease }}
-                className="group flex flex-col sm:flex-row gap-5 p-6 md:p-8 rounded-xl border border-border bg-card/80 backdrop-blur-sm hover:surface-elevated transition-shadow"
+                className="group flex flex-col sm:flex-row gap-5 p-6 md:p-8 rounded-xl border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl hover:surface-elevated transition-shadow"
               >
                 <div className="h-11 w-11 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
                   <s.icon className="h-5 w-5 text-foreground/70" />

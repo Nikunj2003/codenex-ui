@@ -114,10 +114,10 @@ export default function Pricing() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 + i * 0.08, duration: 0.5, ease }}
                 className={cn(
-                  "relative flex flex-col p-7 rounded-xl border backdrop-blur-sm",
+                  "relative flex flex-col p-7 rounded-xl border shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl",
                   plan.highlighted
-                    ? "border-primary/30 bg-card/90 surface-elevated"
-                    : "border-border bg-card/80"
+                    ? "border-primary/40 bg-background/95 surface-elevated"
+                    : "border-border/70 bg-background/92"
                 )}
               >
                 {plan.highlighted && (
@@ -183,7 +183,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, duration: 0.4, ease }}
-                className="p-6 rounded-xl border border-border bg-card/80 backdrop-blur-sm"
+                className="p-6 rounded-xl border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl"
               >
                 <h3 className="font-display font-semibold mb-2">{faq.q}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>

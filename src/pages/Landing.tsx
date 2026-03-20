@@ -277,7 +277,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="border-t border-border py-24 md:py-36">
+      <section className="relative border-y border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl py-24 md:py-36">
         <div className="container px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -330,7 +330,7 @@ export default function Landing() {
             </h2>
           </motion.div>
 
-          <div className="grid gap-px overflow-hidden rounded-xl bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {workflow.map((item, i) => (
               <motion.div
                 key={item.step}
@@ -338,7 +338,7 @@ export default function Landing() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-card p-6 sm:p-7 md:p-8"
+                className="p-6 sm:p-7 md:p-8 rounded-xl border border-border/70 bg-background/92 shadow-[0_18px_60px_-48px_#388880] backdrop-blur-2xl hover:surface-elevated transition-shadow"
               >
                 <p className="mb-5 text-3xl font-display font-bold text-foreground/8">{item.step}</p>
                 <h3 className="mb-2 font-display text-base font-semibold">{item.title}</h3>
